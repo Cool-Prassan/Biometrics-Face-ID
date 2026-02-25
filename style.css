@@ -1,0 +1,122 @@
+:root{
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --accent: #0078d7;
+  --muted: #6b7280;
+  --good: #10b981;
+  --bad: #ef4444;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family: Inter, "Segoe UI", system-ui, Arial;
+  background: linear-gradient(180deg,#eef6ff,#f7fbff);
+  color:#111827;
+  padding:20px;
+}
+
+.card{
+  width:100%;
+  max-width:960px;
+  background:var(--card);
+  border-radius:14px;
+  padding:20px;
+  box-shadow:0 10px 30px rgba(2,6,23,0.08);
+}
+
+h1{ color:var(--accent); margin:0 0 6px 0 }
+.muted{ color:var(--muted); margin:0 0 12px 0 }
+
+.video-wrap{
+  position:relative;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  margin-bottom:12px;
+}
+video{
+  width:100%;
+  max-width:480px;
+  border-radius:10px;
+  border:4px solid rgba(0,120,215,0.12);
+  background:#000;
+}
+.overlay{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  background:rgba(255,255,255,0.9);
+  padding:8px 12px;
+  border-radius:8px;
+  font-weight:600;
+  color:#333;
+  display:none;
+}
+
+.controls{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  margin:10px 0 18px;
+  flex-wrap:wrap;
+}
+button{
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  padding:10px 14px;
+  border-radius:8px;
+  font-weight:700;
+  cursor:pointer;
+}
+button:disabled{ background:#cbd5e1; cursor:not-allowed }
+.threshold{ color:var(--muted); font-size:14px; margin-left:auto; display:flex; gap:8px; align-items:center }
+.threshold input{ width:80px; padding:6px 8px; border-radius:6px; border:1px solid #e6eefb }
+
+.panels{
+  display:flex;
+  gap:14px;
+  margin-bottom:12px;
+  flex-wrap:wrap;
+}
+.panels section{ flex:1; min-width:260px }
+
+.descriptor{
+  background:#f8fbff;
+  border-radius:8px;
+  padding:8px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  max-height:220px;
+  overflow:auto;
+  border:1px solid rgba(2,6,23,0.04);
+}
+.descriptor .elem{
+  min-width:44px;
+  padding:6px;
+  border-radius:6px;
+  text-align:center;
+  font-family:monospace;
+  font-size:12px;
+  background:white;
+  border:1px solid rgba(2,6,23,0.04);
+}
+.elem.match { background: #ecfdf5; border-color: rgba(16,185,129,0.2); color: var(--good) }
+.elem.diff  { background: #fff1f2; border-color: rgba(239,68,68,0.12); color: var(--bad) }
+
+.result{
+  background:#f1f5f9;
+  padding:12px;
+  border-radius:8px;
+  font-weight:700;
+  color:#0f172a;
+}
+
+.note{ color:var(--muted); font-size:13px; margin-top:8px }
